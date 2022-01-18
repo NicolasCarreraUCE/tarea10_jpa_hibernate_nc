@@ -33,7 +33,7 @@ public class PacienteServiceImpl implements IPacienteService {
 	@Override
 	public Paciente buscarPacientePorId(Integer id) {
 		// TODO Auto-generated method stub
-		return this.buscarPacientePorId(id);
+		return this.pacienteRepo.buscarPaciente(id);
 	}
 
 }

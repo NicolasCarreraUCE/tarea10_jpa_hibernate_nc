@@ -7,4 +7,5 @@ public interface IPacienteService {
 	void borrarPacientePorId(Integer id);
 	void apctualizarPaciente(Paciente paciente);
 	Paciente buscarPacientePorId(Integer id);
+	
 }
