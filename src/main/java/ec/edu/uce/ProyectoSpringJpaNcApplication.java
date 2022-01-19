@@ -68,15 +68,23 @@ public class ProyectoSpringJpaNcApplication implements CommandLineRunner {
 		g1.setApellido("Torres");
 		g1.setEdificio("Naciones Unidas");
 		
-		this.guardiaService.guardarGuardia(g1);
+		//this.guardiaService.guardarGuardia(g1);
 	
-		Guardia g2 = new Guardia();
-		g2.setId(1);
-		g2.setNombre("Juanito");
-		g2.setApellido("Teran");
-		g2.setEdificio("Villaflora");
+//		Guardia g2 = new Guardia();
+//		g2.setId(1);
+//		g2.setNombre("Juanito");
+//		g2.setApellido("Teran");
+//		g2.setEdificio("Villaflora");
+//		
+//		this.guardiaService.actializarGuardia(g2);
+	
+		Guardia g3 = this.guardiaService.buscarGuardia(1);
+		System.out.println(g3);
 		
-		this.guardiaService.actializarGuardia(g2);
+		//this.guardiaService.borrarGuardia(5);
+		
+		Guardia gApellido = this.guardiaService.buscarPorApellido("Teran");
+		System.out.println(gApellido);
 	}
 
 }

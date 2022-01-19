@@ -3,7 +3,9 @@ package ec.edu.uce.modelo.jpa;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -11,8 +13,10 @@ import javax.persistence.Table;
 public class Guardia {
 
 	@Id // Define la clave primaria
-	@GeneratedValue // General el id aprtir de una secuancia
 	@Column(name="id") // Relaciona el argumento con la columna de la base de datos
+
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guardia") // General el id aprtir de una secuancia
+	@SequenceGenerator(name = "seq_guardia", sequenceName = "seq_guardia", allocationSize = 1)
 	private Integer id;
 	
 	@Column(name="nombre") // Se puede omitir si tienen el mismo nombre como en este caso
