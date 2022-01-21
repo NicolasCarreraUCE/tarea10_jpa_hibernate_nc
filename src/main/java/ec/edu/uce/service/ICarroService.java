@@ -6,4 +6,8 @@ public interface ICarroService {
 
 	void guardarCarro(Carro carro);
 	void actializarCarro(Carro carro);
+	Carro buscarCarro(Integer id);
+	void borrarGuardar(Integer id);
+	
+	Carro buscarPorMatricula(String matricula);
 }

@@ -8,4 +8,6 @@ public interface IMotoRepo {
 	void actualizarMoto(Moto moto);
 	Moto buscarMotoPorId(Integer id);
 	void borrarMotoPorId(Integer id);
+	
+	Moto buscarMotoPorMatricula(String matricula);
 }

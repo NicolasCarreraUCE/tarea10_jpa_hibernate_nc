@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -30,13 +31,22 @@ public class SubmarinoRepoImpl implements ISubmarinoRepo {
 	@Override
 	public Submarino buscarSubmarinoPorId(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.entityManager.find(Submarino.class, id);
 	}
 
 	@Override
 	public void borrarSubmarinoPorId(Integer id) {
 		// TODO Auto-generated method stub
+		this.entityManager.remove(this.buscarSubmarinoPorId(id));
+	}
 
+	@Override
+	public Submarino buscarSubmarinoPorModelo(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createQuery("SELECT s FROM Submarino s WHERE s.sub_modelo=:valor");
+		miQuery.setParameter("valor", modelo);
+		Submarino miSubmarino = (Submarino) miQuery.getSingleResult();
+		return miSubmarino;
 	}
 
 }

@@ -24,4 +24,22 @@ public class CarroServiceImpl implements ICarroService {
 		this.carroRepo.actualizarCarro(carro);
 	}
 
+	@Override
+	public Carro buscarCarro(Integer id) {
+		// TODO Auto-generated method stub
+		return this.carroRepo.buscarCarroPorId(id);
+	}
+
+	@Override
+	public void borrarGuardar(Integer id) {
+		// TODO Auto-generated method stub
+		this.carroRepo.borrarCarroPorId(id);
+	}
+
+	@Override
+	public Carro buscarPorMatricula(String matricula) {
+		// TODO Auto-generated method stub
+		return this.carroRepo.buscarCarroPorMatricula(matricula);
+	}
+
 }

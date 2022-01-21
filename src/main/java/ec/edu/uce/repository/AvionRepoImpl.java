@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -30,13 +31,22 @@ public class AvionRepoImpl implements IAvionRepo {
 	@Override
 	public Avion buscarAvionPorId(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.entityManager.find(Avion.class, id);
 	}
 
 	@Override
 	public void borrarAvionPorId(Integer id) {
 		// TODO Auto-generated method stub
+		this.entityManager.remove(this.buscarAvionPorId(id));
+	}
 
+	@Override
+	public Avion buscarAvionPorModelo(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createQuery("SELECT a FROM Avion a WHERE a.avi_modelo=:valor");
+		miQuery.setParameter("valor", modelo);
+		Avion miAvion = (Avion) miQuery.getSingleResult();
+		return miAvion;
 	}
 
 }

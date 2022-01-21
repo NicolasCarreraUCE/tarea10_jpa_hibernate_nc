@@ -24,4 +24,22 @@ public class MotoServiceImpl implements IMotoService {
 		this.motoRepo.actualizarMoto(moto);
 	}
 
+	@Override
+	public Moto buscarMoto(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void borrarMoto(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Moto buscarMotoPorMatricula(String matricula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

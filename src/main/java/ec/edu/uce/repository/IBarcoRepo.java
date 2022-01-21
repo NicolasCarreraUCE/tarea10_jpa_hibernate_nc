@@ -8,4 +8,6 @@ public interface IBarcoRepo {
 	void actualizarBarco(Barco barco);
 	Barco buscarBarcoPorId(Integer id);
 	void borrarBarcoPorId(Integer id);
+	
+	Barco buscarBarcoPorModelo(String modelo);
 }

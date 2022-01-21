@@ -8,4 +8,6 @@ public interface ICarroRepo {
 	void actualizarCarro(Carro carro);
 	Carro buscarCarroPorId(Integer id);
 	void borrarCarroPorId(Integer id);
+	
+	Carro buscarCarroPorMatricula(String matricual);
 }

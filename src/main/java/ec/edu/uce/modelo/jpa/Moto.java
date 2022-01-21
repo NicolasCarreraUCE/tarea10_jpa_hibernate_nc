@@ -3,7 +3,9 @@ package ec.edu.uce.modelo.jpa;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -11,8 +13,9 @@ import javax.persistence.Table;
 public class Moto {
 
 	@Id
-	@GeneratedValue
 	@Column(name = "mot_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_moto")
+	@SequenceGenerator(name = "seq_moto", sequenceName = "seq_moto", allocationSize = 1)
 	private Integer id;
 	
 	@Column(name = "mot_marca")

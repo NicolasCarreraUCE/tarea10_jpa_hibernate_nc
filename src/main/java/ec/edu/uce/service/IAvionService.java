@@ -6,4 +6,8 @@ public interface IAvionService {
 
 	void guardarAvion(Avion avion);
 	void actializarAvion(Avion avion);
+	Avion buscarAvion(Integer id);
+	void borrarAvion(Integer id);
+	
+	Avion buscarPorModelo(String modelo);
 }

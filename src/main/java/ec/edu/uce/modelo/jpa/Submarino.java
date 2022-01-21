@@ -3,7 +3,9 @@ package ec.edu.uce.modelo.jpa;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -11,8 +13,9 @@ import javax.persistence.Table;
 public class Submarino {
 
 	@Id
-	@GeneratedValue
 	@Column(name = "sub_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_submarino")
+	@SequenceGenerator(name = "seq_submarino", sequenceName = "seq_submarino", allocationSize = 1)
 	private Integer id;
 	
 	@Column(name = "sub_modelo")

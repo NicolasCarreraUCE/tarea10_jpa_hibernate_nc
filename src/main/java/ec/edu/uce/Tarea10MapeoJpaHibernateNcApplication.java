@@ -46,85 +46,116 @@ public class Tarea10MapeoJpaHibernateNcApplication implements CommandLineRunner 
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		Guardia g1 = new Guardia();
-		g1.setNombre("Pepito");
-		g1.setApellido("Torres");
-		g1.setEdificio("Naciones Unidas");
+//		Guardia g1 = new Guardia();
+//		g1.setNombre("Pepito");
+//		g1.setApellido("Torres");
+//		g1.setEdificio("Naciones Unidas");
+//		
+//		this.guardiaService.guardarGuardia(g1);
+//		
+//		Avion av1 = new Avion();
+//		av1.setModelo("F-35 Lightning II");
+//		av1.setNumPasajeros(1);
+//		
+//		this.avionService.guardarAvion(av1);
+//		
+//		Barco ba1 = new Barco();
+//		ba1.setModelo("RMS Titanic​");
+//		ba1.setPropulsion("Motor de carbon");
+//		
+//		this.barcoService.guardarBarco(ba1);
+//		
+//		Carro ca1 = new Carro();
+//		ca1.setMarca("Chevrolet");
+//		ca1.setNumPlaca("ABC-100");
+//		
+//		this.carroService.guardarCarro(ca1);
+//		
+//		Moto mt1 = new Moto();
+//		mt1.setMarca("Suzuki");
+//		mt1.setNumPlaca("HD-200");
+//		
+//		this.motoService.guardarMoto(mt1);
+//		
+//		Submarino su1 = new Submarino();
+//		su1.setModelo("Ocean Pearl");
+//		su1.setProfundidadMax(1000.0);
+//		
+//		this.submarinoService.guardarSubmarino(su1);
+//		
+//		Guardia g2 = new Guardia();
+//		g2.setId(1);
+//		g2.setNombre("Juanito");
+//		g2.setApellido("Teran");
+//		g2.setEdificio("Villaflora");
+//		
+//		this.guardiaService.actializarGuardia(g2);
+//		
+//		Avion av2 = new Avion();
+//		av2.setId(1);
+//		av2.setModelo("Boeing 777-200");
+//		av2.setNumPasajeros(100);
+//		
+//		this.avionService.actializarAvion(av2);
+//		
+//		Barco ba2 = new Barco();
+//		ba2.setId(1);
+//		ba2.setModelo("Sea Ray 350 SLX​");
+//		ba2.setPropulsion("Motor de diecel");
+//		
+//		this.barcoService.actializarBarco(ba2);
+//		
+//		Carro ca2 = new Carro();
+//		ca2.setId(1);
+//		ca2.setMarca("Toyota");
+//		ca2.setNumPlaca("PQR-345");
+//		
+//		this.carroService.actializarCarro(ca2);
+//		
+//		Moto mt2 = new Moto();
+//		mt2.setId(1);
+//		mt2.setMarca("Honda");
+//		mt2.setNumPlaca("FK-321");
+//		
+//		this.motoService.actializarMoto(mt2);
+//		
+//		Submarino su2 = new Submarino();
+//		su2.setId(1);
+//		su2.setModelo("Typhoon");
+//		su2.setProfundidadMax(500.0);
+//		
+//		this.submarinoService.actializarSubmarino(su2);
 		
-		this.guardiaService.guardarGuardia(g1);
+//		Guardia g3 = this.guardiaService.buscarGuardia(1);
+//
+//		Avion av3 = this.avionService.buscarAvion(1);
+//		
+//		Barco ba3 = this.barcoService.buscarBarco(1);
+//		
+//		Carro ca3 = this.carroService.buscarCarro(1);
+//		
+//		Moto mt3 = this.motoService.buscarMoto(1);
+//		
+//		Submarino su3 = this.submarinoService.buscarSubmarino(1);
 		
-		Avion av1 = new Avion();
-		av1.setModelo("F-35 Lightning II");
-		av1.setNumPasajeros(1);
+//		this.guardiaService.borrarGuardia(1);
+//		this.avionService.borrarAvion(1);
+//		this.barcoService.borrarBarco(1);
+//		this.carroService.borrarGuardar(1);
+//		this.motoService.borrarMoto(1);
+//		this.submarinoService.borrarSubmarino(1);
 		
-		this.avionService.guardarAvion(av1);
+		//Guardia g4 = this.guardiaService.buscarPorApellido("Teran");
+
+		Avion av4 = this.avionService.buscarPorModelo("Boeing 777-200");
 		
-		Barco ba1 = new Barco();
-		ba1.setModelo("RMS Titanic​");
-		ba1.setPropulsion("Motor de carbon");
+		Barco ba4 = this.barcoService.buscarPorModelo("Sea Ray 350 SLX​");
 		
-		this.barcoService.guardarBarco(ba1);
+		Carro ca4 = this.carroService.buscarPorMatricula("PQR-345");
 		
-		Carro ca1 = new Carro();
-		ca1.setMarca("Chevrolet");
-		ca1.setNumPlaca("ABC-100");
+		Moto mt4 = this.motoService.buscarMotoPorMatricula("FK-321");
 		
-		this.carroService.guardarCarro(ca1);
-		
-		Moto mt1 = new Moto();
-		mt1.setMarca("Suzuki");
-		mt1.setNumPlaca("HD-200");
-		
-		this.motoService.guardarMoto(mt1);
-		
-		Submarino su1 = new Submarino();
-		su1.setModelo("Ocean Pearl");
-		su1.setProfundidadMax(1000.0);
-		
-		this.submarinoService.guardarSubmarino(su1);
-		
-		Guardia g2 = new Guardia();
-		g2.setId(1);
-		g2.setNombre("Juanito");
-		g2.setApellido("Teran");
-		g2.setEdificio("Villaflora");
-		
-		this.guardiaService.actializarGuardia(g2);
-		
-		Avion av2 = new Avion();
-		av2.setId(1);
-		av2.setModelo("Boeing 777-200");
-		av2.setNumPasajeros(100);
-		
-		this.avionService.actializarAvion(av2);
-		
-		Barco ba2 = new Barco();
-		ba2.setId(1);
-		ba2.setModelo("Sea Ray 350 SLX​");
-		ba2.setPropulsion("Motor de diecel");
-		
-		this.barcoService.actializarBarco(ba2);
-		
-		Carro ca2 = new Carro();
-		ca2.setId(1);
-		ca2.setMarca("Toyota");
-		ca2.setNumPlaca("PQR-345");
-		
-		this.carroService.actializarCarro(ca2);
-		
-		Moto mt2 = new Moto();
-		mt2.setId(1);
-		mt2.setMarca("Honda");
-		mt2.setNumPlaca("FK-321");
-		
-		this.motoService.actializarMoto(mt2);
-		
-		Submarino su2 = new Submarino();
-		su2.setId(1);
-		su2.setModelo("Typhoon");
-		su2.setProfundidadMax(500.0);
-		
-		this.submarinoService.guardarSubmarino(su2);
+		Submarino su4 = this.submarinoService.buscarSubmarinoPorModelo("Typhoon");
 	}
 
 }

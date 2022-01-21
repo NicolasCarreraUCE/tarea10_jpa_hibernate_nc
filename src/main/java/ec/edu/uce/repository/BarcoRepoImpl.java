@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -30,13 +31,22 @@ public class BarcoRepoImpl implements IBarcoRepo {
 	@Override
 	public Barco buscarBarcoPorId(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.entityManager.find(Barco.class, id);
 	}
 
 	@Override
 	public void borrarBarcoPorId(Integer id) {
 		// TODO Auto-generated method stub
+		this.entityManager.remove(this.buscarBarcoPorId(id));
+	}
 
+	@Override
+	public Barco buscarBarcoPorModelo(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createQuery("SELECT b FROM Barco b WHERE b.bar_modelo=:valor");
+		miQuery.setParameter("valor", modelo);
+		Barco miBarco = (Barco) miQuery.getSingleResult();
+		return miBarco;
 	}
 
 }

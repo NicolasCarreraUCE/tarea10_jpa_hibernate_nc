@@ -8,4 +8,6 @@ public interface ISubmarinoRepo {
 	void actualizarSubmarino(Submarino submarino);
 	Submarino buscarSubmarinoPorId(Integer id);
 	void borrarSubmarinoPorId(Integer id);
+	
+	Submarino buscarSubmarinoPorModelo(String modelo);
 }

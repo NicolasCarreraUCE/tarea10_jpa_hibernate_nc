@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -30,13 +31,22 @@ public class CarroRepoImpl implements ICarroRepo {
 	@Override
 	public Carro buscarCarroPorId(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.entityManager.find(Carro.class, id);
 	}
 
 	@Override
 	public void borrarCarroPorId(Integer id) {
 		// TODO Auto-generated method stub
+		this.entityManager.remove(this.buscarCarroPorId(id));
+	}
 
+	@Override
+	public Carro buscarCarroPorMatricula(String matricual) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createQuery("SELECT c FROM Carro c WHERE c.car_num_placa=:valor");
+		miQuery.setParameter("valor", matricual);
+		Carro miCarro = (Carro) miQuery.getSingleResult();
+		return miCarro;
 	}
 
 }

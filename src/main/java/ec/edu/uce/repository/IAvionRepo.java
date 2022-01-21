@@ -8,4 +8,5 @@ public interface IAvionRepo {
 	void actualizarAvion(Avion avion);
 	Avion buscarAvionPorId(Integer id);
 	void borrarAvionPorId(Integer id);
+	Avion buscarAvionPorModelo(String modelo);
 }

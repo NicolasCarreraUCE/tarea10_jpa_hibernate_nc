@@ -24,4 +24,24 @@ public class SubmarinoServiceImpl implements ISubmarinoService {
 		this.submarinoRepo.actualizarSubmarino(submarino);
 	}
 
+	@Override
+	public Submarino buscarSubmarino(Integer id) {
+		// TODO Auto-generated method stub
+		return this.submarinoRepo.buscarSubmarinoPorId(id);
+	}
+
+	@Override
+	public void borrarSubmarino(Integer id) {
+		// TODO Auto-generated method stub
+		this.submarinoRepo.borrarSubmarinoPorId(id);
+	}
+
+	@Override
+	public Submarino buscarSubmarinoPorModelo(String modelo) {
+		// TODO Auto-generated method stub
+		return this.submarinoRepo.buscarSubmarinoPorModelo(modelo);
+	}
+
+	
+
 }
