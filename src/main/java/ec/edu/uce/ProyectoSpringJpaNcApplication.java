@@ -1,5 +1,7 @@
 package ec.edu.uce;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +18,8 @@ import ec.edu.uce.service.IPacienteService;
 @SpringBootApplication
 public class ProyectoSpringJpaNcApplication implements CommandLineRunner {
 
+	private static final Logger LOG = LoggerFactory.getLogger(ProyectoSpringJpaNcApplication.class);
+	
 	@Autowired
 	private IPacienteService pacienteService;
 	
@@ -63,10 +67,10 @@ public class ProyectoSpringJpaNcApplication implements CommandLineRunner {
 //		
 //		this.gestorCitaService.registrarNuevaConsulata(p1, r1);
 	
-		Guardia g1 = new Guardia();
-		g1.setNombre("Pepito");
-		g1.setApellido("Torres");
-		g1.setEdificio("Naciones Unidas");
+//		Guardia g1 = new Guardia();
+//		g1.setNombre("Pepito");
+//		g1.setApellido("Torres");
+//		g1.setEdificio("Naciones Unidas");
 		
 		//this.guardiaService.guardarGuardia(g1);
 	
@@ -78,13 +82,20 @@ public class ProyectoSpringJpaNcApplication implements CommandLineRunner {
 //		
 //		this.guardiaService.actializarGuardia(g2);
 	
-		Guardia g3 = this.guardiaService.buscarGuardia(1);
-		System.out.println(g3);
+//		Guardia g3 = this.guardiaService.buscarGuardia(1);
+//		System.out.println(g3);
 		
 		//this.guardiaService.borrarGuardia(5);
 		
-		Guardia gApellido = this.guardiaService.buscarPorApellido("Teran");
-		System.out.println(gApellido);
+//		Guardia gApellido = this.guardiaService.buscarPorApellido("Teran");
+//		System.out.println(gApellido);
+		
+//		Guardia g4 = this.guardiaService.buscarGuardiaPorApellidoLista("Teran");
+	
+//		Guardia g5 = this.guardiaService.buscarGuardiaPorApellidoListaTyped("Teran");
+	
+		Guardia g5 = this.guardiaService.buscarGuardiaPorApellidoListaNamed("Teran");
+		LOG.info("El guardia es: " + g5);
 	}
 
 }
