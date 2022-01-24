@@ -10,4 +10,7 @@ public interface IGuardiaService {
 	void borrarGuardia(Integer id);
 	
 	Guardia buscarPorApellido(String apellido);
+
+	Guardia buscarPorApellidoType(String apellido);
+	Guardia buscarPorApellidoName(String apellido);
 }

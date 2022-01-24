@@ -42,4 +42,16 @@ public class AvionServiceImpl implements IAvionService {
 		return this.avionRepo.buscarAvionPorModelo(modelo);
 	}
 
+	@Override
+	public Avion buscarPorModeloType(String modelo) {
+		// TODO Auto-generated method stub
+		return this.avionRepo.buscarAvionPorModeloType(modelo);
+	}
+
+	@Override
+	public Avion buscarPorModeloNamed(String modelo) {
+		// TODO Auto-generated method stub
+		return this.avionRepo.buscarAvionPorModeloNamed(modelo);
+	}
+
 }

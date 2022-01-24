@@ -1,8 +1,10 @@
 package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -47,6 +49,28 @@ public class BarcoRepoImpl implements IBarcoRepo {
 		miQuery.setParameter("valor", modelo);
 		Barco miBarco = (Barco) miQuery.getSingleResult();
 		return miBarco;
+	}
+
+	/**
+	 * Buscar por TypeQuery
+	 */
+	@Override
+	public Barco buscarBarcoPorModeloType(String modelo) {
+		// TODO Auto-generated method stub
+		TypedQuery<Barco> miQuery = (TypedQuery<Barco>) this.entityManager.createQuery("SELECT b FROM Barco b WHERE b.bar_modelo=:valor");
+		miQuery.setParameter("valor", modelo);
+		return miQuery.getSingleResult();
+	}
+
+	/**
+	 * Buscar por NamedQuery
+	 */
+	@Override
+	public Barco buscarBarcoPorModeloNamed(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNamedQuery("Barco.buscarPorModelo");
+		miQuery.setParameter("valor", modelo);
+		return (Barco) miQuery.getSingleResult();
 	}
 
 }

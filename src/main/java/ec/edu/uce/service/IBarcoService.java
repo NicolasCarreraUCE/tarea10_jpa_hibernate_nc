@@ -10,4 +10,7 @@ public interface IBarcoService {
 	void borrarBarco(Integer id);
 	
 	Barco buscarPorModelo(String modelo); 
+	
+	Barco buscarPorModeloType(String modelo);
+	Barco buscarPorModeloNamed(String modelo);
 }

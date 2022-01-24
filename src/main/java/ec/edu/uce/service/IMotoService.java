@@ -10,4 +10,7 @@ public interface IMotoService {
 	void borrarMoto(Integer id);
 	
 	Moto buscarMotoPorMatricula(String matricula);
+	
+	Moto buscarPorMatriculaType(String matricula);
+	Moto buscarPorMatriculaNamed(String matricula);
 }

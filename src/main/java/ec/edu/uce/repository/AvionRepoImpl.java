@@ -3,6 +3,7 @@ package ec.edu.uce.repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -47,6 +48,28 @@ public class AvionRepoImpl implements IAvionRepo {
 		miQuery.setParameter("valor", modelo);
 		Avion miAvion = (Avion) miQuery.getSingleResult();
 		return miAvion;
+	}
+
+	/**
+	 * Buscar por PypeQuery
+	 */
+	@Override
+	public Avion buscarAvionPorModeloType(String modelo) {
+		// TODO Auto-generated method stub
+		TypedQuery<Avion> miQuery = (TypedQuery<Avion>) this.entityManager.createQuery("SELECT a FROM Avion a WHERE a.avi_modelo=:valor");
+		miQuery.setParameter("valor", modelo);
+		return miQuery.getSingleResult();
+	}
+
+	/**
+	 * Buscar por NamedQuery
+	 */
+	@Override
+	public Avion buscarAvionPorModeloNamed(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNamedQuery("Avion.buscarPorModelo");
+		miQuery.setParameter("valor", modelo);
+		return (Avion) miQuery.getSingleResult();
 	}
 
 }

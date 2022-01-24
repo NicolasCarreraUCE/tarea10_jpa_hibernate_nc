@@ -125,7 +125,7 @@ public class Tarea10MapeoJpaHibernateNcApplication implements CommandLineRunner 
 //		su2.setProfundidadMax(500.0);
 //		
 //		this.submarinoService.actializarSubmarino(su2);
-		
+//		
 //		Guardia g3 = this.guardiaService.buscarGuardia(1);
 //
 //		Avion av3 = this.avionService.buscarAvion(1);
@@ -137,25 +137,52 @@ public class Tarea10MapeoJpaHibernateNcApplication implements CommandLineRunner 
 //		Moto mt3 = this.motoService.buscarMoto(1);
 //		
 //		Submarino su3 = this.submarinoService.buscarSubmarino(1);
-		
+//		
 //		this.guardiaService.borrarGuardia(1);
 //		this.avionService.borrarAvion(1);
 //		this.barcoService.borrarBarco(1);
 //		this.carroService.borrarGuardar(1);
 //		this.motoService.borrarMoto(1);
 //		this.submarinoService.borrarSubmarino(1);
-		
-		//Guardia g4 = this.guardiaService.buscarPorApellido("Teran");
+//		
+//		Guardia g4 = this.guardiaService.buscarPorApellido("Teran");
+//
+//		Avion av4 = this.avionService.buscarPorModelo("Boeing 777-200");
+//		
+//		Barco ba4 = this.barcoService.buscarPorModelo("Sea Ray 350 SLX​");
+//		
+//		Carro ca4 = this.carroService.buscarPorMatricula("PQR-345");
+//		
+//		Moto mt4 = this.motoService.buscarMotoPorMatricula("FK-321");
+//		
+//		Submarino su4 = this.submarinoService.buscarSubmarinoPorModelo("Typhoon");
 
-		Avion av4 = this.avionService.buscarPorModelo("Boeing 777-200");
+		Guardia g4 = this.guardiaService.buscarPorApellidoType("Teran");
+
+		Avion av4 = this.avionService.buscarPorModeloType("Boeing 777-200");
 		
-		Barco ba4 = this.barcoService.buscarPorModelo("Sea Ray 350 SLX​");
+		Barco ba4 = this.barcoService.buscarPorModeloType("Sea Ray 350 SLX​");
 		
-		Carro ca4 = this.carroService.buscarPorMatricula("PQR-345");
+		Carro ca4 = this.carroService.buscarPorMatriculaType("PQR-345");
 		
-		Moto mt4 = this.motoService.buscarMotoPorMatricula("FK-321");
+		Moto mt4 = this.motoService.buscarPorMatriculaType("FK-321");
 		
-		Submarino su4 = this.submarinoService.buscarSubmarinoPorModelo("Typhoon");
+		Submarino su4 = this.submarinoService.buscarPorModeloType("Typhoon");
+
+		
+		Guardia g5 = this.guardiaService.buscarPorApellidoType("Teran");
+
+		Avion av5 = this.avionService.buscarPorModeloType("Boeing 777-200");
+		
+		Barco ba5 = this.barcoService.buscarPorModeloType("Sea Ray 350 SLX​");
+		
+		Carro ca5 = this.carroService.buscarPorMatriculaType("PQR-345");
+		
+		Moto mt5 = this.motoService.buscarPorMatriculaType("FK-321");
+		
+		Submarino su5 = this.submarinoService.buscarPorModeloType("Typhoon");
+
+	
 	}
 
 }

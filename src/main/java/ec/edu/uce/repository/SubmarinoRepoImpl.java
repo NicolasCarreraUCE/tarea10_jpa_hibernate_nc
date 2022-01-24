@@ -3,6 +3,7 @@ package ec.edu.uce.repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -47,6 +48,28 @@ public class SubmarinoRepoImpl implements ISubmarinoRepo {
 		miQuery.setParameter("valor", modelo);
 		Submarino miSubmarino = (Submarino) miQuery.getSingleResult();
 		return miSubmarino;
+	}
+
+	/**
+	 * Consulta por TypeQuery
+	 */
+	@Override
+	public Submarino buscarSubmarinoPorModeloType(String modelo) {
+		// TODO Auto-generated method stub
+		TypedQuery<Submarino> miQuery = (TypedQuery<Submarino>) this.entityManager.createQuery("SELECT s FROM Submarino s WHERE s.sub_modelo=:valor");
+		miQuery.setParameter("valor", modelo);
+		return miQuery.getSingleResult();
+	}
+
+	/**
+	 * Consulta por NamedQuery
+	 */
+	@Override
+	public Submarino buscarSubmarinoPorModeloNamed(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNamedQuery("Submarino.buscarPorModelo");
+		miQuery.setParameter("valor", modelo);
+		return (Submarino) miQuery.getSingleResult();
 	}
 
 }

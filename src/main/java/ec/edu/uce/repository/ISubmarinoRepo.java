@@ -10,4 +10,7 @@ public interface ISubmarinoRepo {
 	void borrarSubmarinoPorId(Integer id);
 	
 	Submarino buscarSubmarinoPorModelo(String modelo);
+	
+	Submarino buscarSubmarinoPorModeloType(String modelo);
+	Submarino buscarSubmarinoPorModeloNamed(String modelo);
 }

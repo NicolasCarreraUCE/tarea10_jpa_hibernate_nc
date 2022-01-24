@@ -10,4 +10,7 @@ public interface ICarroRepo {
 	void borrarCarroPorId(Integer id);
 	
 	Carro buscarCarroPorMatricula(String matricual);
+	
+	Carro buscarCarroPorMatriculaType(String matricual);
+	Carro buscarCarroPorMatriculaNamed(String matricual);
 }

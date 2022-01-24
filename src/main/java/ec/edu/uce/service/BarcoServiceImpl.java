@@ -42,4 +42,16 @@ public class BarcoServiceImpl implements IBarcoService {
 		return this.barcoRepo.buscarBarcoPorModelo(modelo);
 	}
 
+	@Override
+	public Barco buscarPorModeloType(String modelo) {
+		// TODO Auto-generated method stub
+		return this.barcoRepo.buscarBarcoPorModeloType(modelo);
+	}
+
+	@Override
+	public Barco buscarPorModeloNamed(String modelo) {
+		// TODO Auto-generated method stub
+		return this.barcoRepo.buscarBarcoPorModeloNamed(modelo);
+	}
+
 }

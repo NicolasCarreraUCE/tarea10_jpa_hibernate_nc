@@ -10,4 +10,7 @@ public interface ICarroService {
 	void borrarGuardar(Integer id);
 	
 	Carro buscarPorMatricula(String matricula);
+	
+	Carro buscarPorMatriculaType(String matricual);
+	Carro buscarPorMatriculaNamed(String matricual);
 }

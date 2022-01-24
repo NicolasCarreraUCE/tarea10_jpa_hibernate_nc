@@ -27,19 +27,31 @@ public class MotoServiceImpl implements IMotoService {
 	@Override
 	public Moto buscarMoto(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.motoRepo.buscarMotoPorId(id);
 	}
 
 	@Override
 	public void borrarMoto(Integer id) {
 		// TODO Auto-generated method stub
-		
+		this.motoRepo.borrarMotoPorId(id);
 	}
 
 	@Override
 	public Moto buscarMotoPorMatricula(String matricula) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.motoRepo.buscarMotoPorMatricula(matricula);
+	}
+
+	@Override
+	public Moto buscarPorMatriculaType(String matricula) {
+		// TODO Auto-generated method stub
+		return this.motoRepo.buscarMotoPorMatriculaType(matricula);
+	}
+
+	@Override
+	public Moto buscarPorMatriculaNamed(String matricula) {
+		// TODO Auto-generated method stub
+		return this.motoRepo.buscarMotoPorMatriculaNamed(matricula);
 	}
 
 }
