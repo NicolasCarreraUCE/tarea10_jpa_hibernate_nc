@@ -182,7 +182,6 @@ public class Tarea10MapeoJpaHibernateNcApplication implements CommandLineRunner 
 //		
 //		Submarino su5 = this.submarinoService.buscarPorModeloType("Typhoon");
 
-		//Actualisando
 	
 	}
 
