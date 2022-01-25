@@ -13,4 +13,6 @@ public interface ISubmarinoService {
 	
 	Submarino buscarPorModeloType(String modelo);
 	Submarino buscarPorModeloNamed(String modelo);
+	
+	Submarino buscarPorModeloNative(String modelo);
 }

@@ -13,4 +13,6 @@ public interface IMotoRepo {
 	
 	Moto buscarMotoPorMatriculaType(String matricula);
 	Moto buscarMotoPorMatriculaNamed(String matricula);
+	
+	Moto buscarMotoPorMatriculaNative(String matricula);
 }

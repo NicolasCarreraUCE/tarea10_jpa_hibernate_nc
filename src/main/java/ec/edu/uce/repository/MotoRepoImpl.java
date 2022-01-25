@@ -44,7 +44,7 @@ public class MotoRepoImpl implements IMotoRepo {
 	@Override
 	public Moto buscarMotoPorMatricula(String matricula) {
 		// TODO Auto-generated method stub
-		Query miQuery = this.entityManager.createQuery("SELECT m FROM Moto m WHERE m.mot_marca=:valor");
+		Query miQuery = this.entityManager.createNativeQuery("SELECT m FROM Moto m WHERE m.mot_marca=:valor", Moto.class);
 		miQuery.setParameter("valor", matricula);
 		Moto miMoto = (Moto) miQuery.getSingleResult();
 		return miMoto;
@@ -68,6 +68,14 @@ public class MotoRepoImpl implements IMotoRepo {
 	public Moto buscarMotoPorMatriculaNamed(String matricula) {
 		// TODO Auto-generated method stub
 		Query miQuery = this.entityManager.createNamedQuery("Moto.buscarPorMatricula");
+		miQuery.setParameter("valor", matricula);
+		return (Moto) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Moto buscarMotoPorMatriculaNative(String matricula) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM moto m WHERE m.mot_num_placa=:valor", Moto.class);
 		miQuery.setParameter("valor", matricula);
 		return (Moto) miQuery.getSingleResult();
 	}

@@ -54,6 +54,12 @@ public class SubmarinoServiceImpl implements ISubmarinoService {
 		return this.submarinoRepo.buscarSubmarinoPorModeloNamed(modelo);
 	}
 
+	@Override
+	public Submarino buscarPorModeloNative(String modelo) {
+		// TODO Auto-generated method stub
+		return this.submarinoRepo.buscarSubmarinoPorModeloNative(modelo);
+	}
+
 	
 
 }

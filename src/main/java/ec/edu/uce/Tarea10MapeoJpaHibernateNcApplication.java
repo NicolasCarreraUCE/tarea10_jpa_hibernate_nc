@@ -182,8 +182,12 @@ public class Tarea10MapeoJpaHibernateNcApplication implements CommandLineRunner 
 //		
 //		Submarino su5 = this.submarinoService.buscarPorModeloType("Typhoon");
 
-		//Actualisando
-	
+		this.guardiaService.buscarPorApellidoNative("Teran");
+		this.avionService.buscarPorModeloNative("Boeing 777-200");
+		this.barcoService.buscarPorModeloNative("RMS Titanic");
+		this.carroService.buscarPorMatriculaNative("PQR-345");
+		this.motoService.buscarPorMatriculaNative("FK-321");
+		this.submarinoService.buscarPorModeloNative("Typhoon");
 	}
 
 }

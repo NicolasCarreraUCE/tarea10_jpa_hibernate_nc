@@ -73,4 +73,12 @@ public class BarcoRepoImpl implements IBarcoRepo {
 		return (Barco) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Barco buscarBarcoPorModeloNative(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM barco b WHERE b.bar_modelo=:valor", Barco.class);
+		miQuery.setParameter("valor", modelo);
+		return (Barco) miQuery.getSingleResult();
+	}
+
 }

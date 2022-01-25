@@ -12,4 +12,6 @@ public interface IAvionRepo {
 	
 	Avion buscarAvionPorModeloType(String modelo);
 	Avion buscarAvionPorModeloNamed(String modelo);
+	
+	Avion buscarAvionPorModeloNative(String modelo);
 }

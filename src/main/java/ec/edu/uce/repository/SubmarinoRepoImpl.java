@@ -72,4 +72,12 @@ public class SubmarinoRepoImpl implements ISubmarinoRepo {
 		return (Submarino) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Submarino buscarSubmarinoPorModeloNative(String modelo) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM submarino s WHERE s.sub_modelo=:valor", Submarino.class);
+		miQuery.setParameter("valor", modelo);
+		return (Submarino) miQuery.getSingleResult();
+	}
+
 }

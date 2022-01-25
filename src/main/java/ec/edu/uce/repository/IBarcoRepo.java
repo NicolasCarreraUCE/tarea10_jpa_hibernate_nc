@@ -13,4 +13,7 @@ public interface IBarcoRepo {
 	
 	Barco buscarBarcoPorModeloType(String modelo);
 	Barco buscarBarcoPorModeloNamed(String modelo);
+	
+	Barco buscarBarcoPorModeloNative(String modelo);
+	
 }

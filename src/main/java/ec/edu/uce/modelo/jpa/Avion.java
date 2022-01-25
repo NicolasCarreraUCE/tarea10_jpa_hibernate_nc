@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "avion")
-@NamedQuery(name = "Avion.buscarPorModelo", query = "SELECT a FROM Avion a WHERE a.avi_modelo=:valor")
+//@NamedQuery(name = "Avion.buscarPorModelo", query = "SELECT a FROM Avion a WHERE a.avi_modelo=:valor")
 public class Avion {
 
 	@Id

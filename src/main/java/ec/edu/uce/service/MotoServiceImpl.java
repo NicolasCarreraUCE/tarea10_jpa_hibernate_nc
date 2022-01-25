@@ -54,4 +54,10 @@ public class MotoServiceImpl implements IMotoService {
 		return this.motoRepo.buscarMotoPorMatriculaNamed(matricula);
 	}
 
+	@Override
+	public Moto buscarPorMatriculaNative(String matricula) {
+		// TODO Auto-generated method stub
+		return this.motoRepo.buscarMotoPorMatriculaNative(matricula);
+	}
+
 }

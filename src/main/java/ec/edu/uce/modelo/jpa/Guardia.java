@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="guardia")
-@NamedQuery(name = "Guardia.buscarPorApellido", query = "SELECT g FROM Guardia g WHERE g.gua_apellido=:valor")
+//@NamedQuery(name = "Guardia.buscarPorApellido", query = "SELECT g FROM Guardia g WHERE g.gua_apellido=:valor")
 public class Guardia {
 
 	@Id 
@@ -29,6 +29,11 @@ public class Guardia {
 	
 	@Column(name="gua_edificio")
 	private String edificio;
+		
+	@Override
+	public String toString() {
+		return "Guardia [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edificio=" + edificio + "]";
+	}
 	
 	// SET-GET
 	public Integer getId() {

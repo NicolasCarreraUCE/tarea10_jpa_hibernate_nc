@@ -72,4 +72,12 @@ public class CarroRepoImpl implements ICarroRepo {
 		return (Carro) miQuery.getSingleResult();
 	}
 
+	@Override
+	public Carro buscarCarroPorMatriculaNative(String matricual) {
+		// TODO Auto-generated method stub
+		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM carro c WHERE c.car_num_placa=:valor", Carro.class);
+		miQuery.setParameter("valor", matricual);
+		return (Carro) miQuery.getSingleResult();
+	}
+
 }
