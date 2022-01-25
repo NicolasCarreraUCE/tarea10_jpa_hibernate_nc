@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -12,7 +13,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="guardia") // Este es absolulamente nesesarioo cuando la tabla tiene un nombre diferente
 // Aqui se declara los NamedQuery de Guardia
-@NamedQuery(name = "Guardia.buscarPorApellido", query = "select g from Guardia g where g.apellido=:valor")
+@NamedQueries({
+	@NamedQuery(name = "Guardia.buscarPorApellido", query = "select g from Guardia g where g.apellido=:valor"),
+	@NamedQuery(name = "Guardia.buscarPorApellido1", query = "select g from Guardia g where g.apellido=:valor"),
+	@NamedQuery(name = "Guardia.buscarPorApellido2", query = "select g from Guardia g where g.apellido=:valor"),
+	@NamedQuery(name = "Guardia.buscarPorApellido3", query = "select g from Guardia g where g.apellido=:valor")
+})
 public class Guardia {
 
 	@Id // Define la clave primaria
