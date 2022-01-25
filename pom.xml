@@ -11,11 +11,7 @@
 	<groupId>ec.edu.uce</groupId>
 	<artifactId>proyecto-spring-boot-nc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-<<<<<<< HEAD
 	<name>tarea10_mapeo_jpa_hibernate_nc</name>
-=======
-	<name>proyecto-spring-jpa-nc</name>
->>>>>>> branch 'master' of https://github.com/NicolasCarreraUCE/tarea10_jpa_hibernate_nc.git
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

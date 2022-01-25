@@ -11,7 +11,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-<<<<<<< HEAD
 @Table(name="guardia")
 @NamedQuery(name = "Guardia.buscarPorApellido", query = "SELECT g FROM Guardia g WHERE g.gua_apellido=:valor")
 public class Guardia {
@@ -56,59 +55,5 @@ public class Guardia {
 	public void setEdificio(String edificio) {
 		this.edificio = edificio;
 	}
-=======
-@Table(name="guardia") // Este es absolulamente nesesarioo cuando la tabla tiene un nombre diferente
-// Aqui se declara los NamedQuery de Guardia
-@NamedQueries({
-	@NamedQuery(name = "Guardia.buscarPorApellido", query = "select g from Guardia g where g.apellido=:valor"),
-	@NamedQuery(name = "Guardia.buscarPorApellido1", query = "select g from Guardia g where g.apellido=:valor"),
-	@NamedQuery(name = "Guardia.buscarPorApellido2", query = "select g from Guardia g where g.apellido=:valor"),
-	@NamedQuery(name = "Guardia.buscarPorApellido3", query = "select g from Guardia g where g.apellido=:valor")
-})
-public class Guardia {
-
-	@Id // Define la clave primaria
-	@Column(name="id") // Relaciona el argumento con la columna de la base de datos
-
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guardia") // General el id aprtir de una secuancia
-	@SequenceGenerator(name = "seq_guardia", sequenceName = "seq_guardia", allocationSize = 1)
-	private Integer id;
-	
-	@Column(name="nombre") // Se puede omitir si tienen el mismo nombre como en este caso
-	private String nombre;
-	
-	@Column(name="apellido")
-	private String apellido;
-	
-	@Column(name="edificio")
-	private String edificio;
-	
-	// SET-GET
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getEdificio() {
-		return edificio;
-	}
-	public void setEdificio(String edificio) {
-		this.edificio = edificio;
-	}
-	
->>>>>>> branch 'master' of https://github.com/NicolasCarreraUCE/tarea10_jpa_hibernate_nc.git
 	
 }
