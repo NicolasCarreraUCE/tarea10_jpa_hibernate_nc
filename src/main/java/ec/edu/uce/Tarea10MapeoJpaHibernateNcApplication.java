@@ -157,31 +157,31 @@ public class Tarea10MapeoJpaHibernateNcApplication implements CommandLineRunner 
 //		
 //		Submarino su4 = this.submarinoService.buscarSubmarinoPorModelo("Typhoon");
 
-		Guardia g4 = this.guardiaService.buscarPorApellidoType("Teran");
-
-		Avion av4 = this.avionService.buscarPorModeloType("Boeing 777-200");
-		
-		Barco ba4 = this.barcoService.buscarPorModeloType("Sea Ray 350 SLX​");
-		
-		Carro ca4 = this.carroService.buscarPorMatriculaType("PQR-345");
-		
-		Moto mt4 = this.motoService.buscarPorMatriculaType("FK-321");
-		
-		Submarino su4 = this.submarinoService.buscarPorModeloType("Typhoon");
-
-		
-		Guardia g5 = this.guardiaService.buscarPorApellidoType("Teran");
-
-		Avion av5 = this.avionService.buscarPorModeloType("Boeing 777-200");
-		
-		Barco ba5 = this.barcoService.buscarPorModeloType("Sea Ray 350 SLX​");
-		
-		Carro ca5 = this.carroService.buscarPorMatriculaType("PQR-345");
-		
-		Moto mt5 = this.motoService.buscarPorMatriculaType("FK-321");
-		
-		Submarino su5 = this.submarinoService.buscarPorModeloType("Typhoon");
-
+//		Guardia g4 = this.guardiaService.buscarPorApellidoType("Teran");
+//
+//		Avion av4 = this.avionService.buscarPorModeloType("Boeing 777-200");
+//		
+//		Barco ba4 = this.barcoService.buscarPorModeloType("Sea Ray 350 SLX​");
+//		
+//		Carro ca4 = this.carroService.buscarPorMatriculaType("PQR-345");
+//		
+//		Moto mt4 = this.motoService.buscarPorMatriculaType("FK-321");
+//		
+//		Submarino su4 = this.submarinoService.buscarPorModeloType("Typhoon");
+//
+//		
+//		Guardia g5 = this.guardiaService.buscarPorApellidoType("Teran");
+//
+//		Avion av5 = this.avionService.buscarPorModeloType("Boeing 777-200");
+//		
+//		Barco ba5 = this.barcoService.buscarPorModeloType("Sea Ray 350 SLX​");
+//		
+//		Carro ca5 = this.carroService.buscarPorMatriculaType("PQR-345");
+//		
+//		Moto mt5 = this.motoService.buscarPorMatriculaType("FK-321");
+//		
+//		Submarino su5 = this.submarinoService.buscarPorModeloType("Typhoon");
+//
 	
 	}
 
