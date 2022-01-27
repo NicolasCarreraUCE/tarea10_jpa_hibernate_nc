@@ -60,4 +60,10 @@ public class CarroServiceImpl implements ICarroService {
 		return this.carroRepo.buscarCarroPorMatriculaNative(matricual);
 	}
 
+	@Override
+	public Carro buscarCarroPorMatriculaCiteriaAPI(String matricual) {
+		// TODO Auto-generated method stub
+		return this.carroRepo.buscarCarroPorMatriculaCiteriaAPI(matricual);
+	}
+
 }

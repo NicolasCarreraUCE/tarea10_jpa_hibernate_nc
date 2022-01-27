@@ -15,4 +15,6 @@ public interface ICarroRepo {
 	Carro buscarCarroPorMatriculaNamed(String matricual);
 	
 	Carro buscarCarroPorMatriculaNative(String matricual);
+
+	Carro buscarCarroPorMatriculaCiteriaAPI(String matricual);
 }

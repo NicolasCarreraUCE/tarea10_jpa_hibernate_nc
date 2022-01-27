@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -78,6 +82,23 @@ public class MotoRepoImpl implements IMotoRepo {
 		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM moto m WHERE m.mot_num_placa=:valor", Moto.class);
 		miQuery.setParameter("valor", matricula);
 		return (Moto) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Moto buscarMotoPorMatriculaCiteriaAPI(String matricula) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miCriteriaBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Moto> miQuery = miCriteriaBuilder.createQuery(Moto.class);
+		
+		Root<Moto> miTabla = miQuery.from(Moto.class);
+		
+		Predicate predicado= miCriteriaBuilder.equal(miTabla.get("numPlaca"), matricula);
+		
+		miQuery.select(miTabla).where(predicado);
+		
+		TypedQuery<Moto> typedQuery = this.entityManager.createQuery(miQuery);
+		
+		return typedQuery.getSingleResult();
 	}
 
 }

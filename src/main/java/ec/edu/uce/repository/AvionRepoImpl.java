@@ -4,11 +4,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
 import ec.edu.uce.modelo.jpa.Avion;
+import ec.edu.uce.modelo.jpa.Guardia;
 
 @Repository
 @Transactional
@@ -79,6 +84,23 @@ public class AvionRepoImpl implements IAvionRepo {
 		miQuery.setParameter("valor", modelo);
 
 		return (Avion) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Avion buscarAvionPorModeloCiteriaAPI(String modelo) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miCriteriaBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Avion> miQuery = miCriteriaBuilder.createQuery(Avion.class);
+		
+		Root<Avion> miTabla = miQuery.from(Avion.class);
+		
+		Predicate predicado= miCriteriaBuilder.equal(miTabla.get("modelo"), modelo);
+		
+		miQuery.select(miTabla).where(predicado);
+		
+		TypedQuery<Avion> typedQuery = this.entityManager.createQuery(miQuery);
+		
+		return typedQuery.getSingleResult();
 	}
 
 }

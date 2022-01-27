@@ -5,6 +5,10 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -79,6 +83,23 @@ public class BarcoRepoImpl implements IBarcoRepo {
 		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM barco b WHERE b.bar_modelo=:valor", Barco.class);
 		miQuery.setParameter("valor", modelo);
 		return (Barco) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Barco buscarBarcoPorModeloCiteriaAPI(String modelo) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miCriteriaBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Barco> miQuery = miCriteriaBuilder.createQuery(Barco.class);
+		
+		Root<Barco> miTabla = miQuery.from(Barco.class);
+		
+		Predicate predicado= miCriteriaBuilder.equal(miTabla.get("modelo"), modelo);
+		
+		miQuery.select(miTabla).where(predicado);
+		
+		TypedQuery<Barco> typedQuery = this.entityManager.createQuery(miQuery);
+		
+		return typedQuery.getSingleResult();
 	}
 
 }

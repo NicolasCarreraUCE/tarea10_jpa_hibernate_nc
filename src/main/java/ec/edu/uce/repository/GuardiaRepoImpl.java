@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
@@ -83,6 +87,23 @@ public class GuardiaRepoImpl implements IGuardiaRepo {
 		Query miQuery = this.entityManager.createNativeQuery("select * from guardia g where g.gua_apellido=:valor",Guardia.class);
 		miQuery.setParameter("valor", apellido);
 		return (Guardia) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Guardia buscarGuardiaPorApellidoCiteriaAPI(String apellido) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miCriteriaBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Guardia> miQuery = miCriteriaBuilder.createQuery(Guardia.class);
+		
+		Root<Guardia> miTabla = miQuery.from(Guardia.class);
+		
+		Predicate predicado= miCriteriaBuilder.equal(miTabla.get("apellido"), apellido);
+		
+		miQuery.select(miTabla).where(predicado);
+		
+		TypedQuery<Guardia> typedQuery = this.entityManager.createQuery(miQuery);
+		
+		return typedQuery.getSingleResult();
 	}
 	
 }

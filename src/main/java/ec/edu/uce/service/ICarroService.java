@@ -15,4 +15,7 @@ public interface ICarroService {
 	Carro buscarPorMatriculaNamed(String matricual);
 	
 	Carro buscarPorMatriculaNative(String matricual);
+
+	Carro buscarCarroPorMatriculaCiteriaAPI(String matricual);
+
 }

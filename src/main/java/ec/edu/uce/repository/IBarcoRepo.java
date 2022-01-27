@@ -16,4 +16,5 @@ public interface IBarcoRepo {
 	
 	Barco buscarBarcoPorModeloNative(String modelo);
 	
+	Barco buscarBarcoPorModeloCiteriaAPI(String modelo);
 }

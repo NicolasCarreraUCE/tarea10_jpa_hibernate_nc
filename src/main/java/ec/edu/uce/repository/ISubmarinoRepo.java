@@ -15,4 +15,6 @@ public interface ISubmarinoRepo {
 	Submarino buscarSubmarinoPorModeloNamed(String modelo);
 	
 	Submarino buscarSubmarinoPorModeloNative(String modelo);
+
+	Submarino buscarSubmarinoPorModeloCiteriaAPI(String modelo);
 }

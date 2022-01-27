@@ -15,4 +15,7 @@ public interface IBarcoService {
 	Barco buscarPorModeloNamed(String modelo);
 	
 	Barco buscarPorModeloNative(String modelo);
+
+	Barco buscarBarcoPorModeloCiteriaAPI(String modelo);
+
 }

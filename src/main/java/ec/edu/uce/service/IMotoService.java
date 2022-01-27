@@ -15,4 +15,7 @@ public interface IMotoService {
 	Moto buscarPorMatriculaNamed(String matricula);
 	
 	Moto buscarPorMatriculaNative(String matricula);
+
+	Moto buscarMotoPorMatriculaCiteriaAPI(String matricula);
+
 }

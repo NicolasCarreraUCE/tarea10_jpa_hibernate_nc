@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -78,6 +82,23 @@ public class CarroRepoImpl implements ICarroRepo {
 		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM carro c WHERE c.car_num_placa=:valor", Carro.class);
 		miQuery.setParameter("valor", matricual);
 		return (Carro) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Carro buscarCarroPorMatriculaCiteriaAPI(String matricual) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miCriteriaBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Carro> miQuery = miCriteriaBuilder.createQuery(Carro.class);
+		
+		Root<Carro> miTabla = miQuery.from(Carro.class);
+		
+		Predicate predicado= miCriteriaBuilder.equal(miTabla.get("numPlaca"), matricual);
+		
+		miQuery.select(miTabla).where(predicado);
+		
+		TypedQuery<Carro> typedQuery = this.entityManager.createQuery(miQuery);
+		
+		return typedQuery.getSingleResult();
 	}
 
 }

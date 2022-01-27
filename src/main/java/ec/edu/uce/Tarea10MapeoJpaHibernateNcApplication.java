@@ -181,13 +181,20 @@ public class Tarea10MapeoJpaHibernateNcApplication implements CommandLineRunner 
 //		Moto mt5 = this.motoService.buscarPorMatriculaType("FK-321");
 //		
 //		Submarino su5 = this.submarinoService.buscarPorModeloType("Typhoon");
-
-		this.guardiaService.buscarPorApellidoNative("Teran");
-		this.avionService.buscarPorModeloNative("Boeing 777-200");
-		this.barcoService.buscarPorModeloNative("RMS Titanic");
-		this.carroService.buscarPorMatriculaNative("PQR-345");
-		this.motoService.buscarPorMatriculaNative("FK-321");
-		this.submarinoService.buscarPorModeloNative("Typhoon");
+//
+//		this.guardiaService.buscarPorApellidoNative("Teran");
+//		this.avionService.buscarPorModeloNative("Boeing 777-200");
+//		this.barcoService.buscarPorModeloNative("RMS Titanic");
+//		this.carroService.buscarPorMatriculaNative("PQR-345");
+//		this.motoService.buscarPorMatriculaNative("FK-321");
+//		this.submarinoService.buscarPorModeloNative("Typhoon");
+	
+		this.guardiaService.buscarGuardiaPorApellidoCiteriaAPI("Teran");
+		this.avionService.buscarAvionPorModeloCiteriaAPI("Boeing 777-200");
+		this.barcoService.buscarBarcoPorModeloCiteriaAPI("Sea Ray 350 SLX​");
+		this.carroService.buscarCarroPorMatriculaCiteriaAPI("PQR-345");
+		this.motoService.buscarMotoPorMatriculaCiteriaAPI("FK-321");
+		this.submarinoService.buscarSubmarinoPorModeloCiteriaAPI("Typhoon");
 	}
 
 }

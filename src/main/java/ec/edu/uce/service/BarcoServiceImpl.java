@@ -60,4 +60,10 @@ public class BarcoServiceImpl implements IBarcoService {
 		return this.barcoRepo.buscarBarcoPorModeloNative(modelo);
 	}
 
+	@Override
+	public Barco buscarBarcoPorModeloCiteriaAPI(String modelo) {
+		// TODO Auto-generated method stub
+		return this.barcoRepo.buscarBarcoPorModeloCiteriaAPI(modelo);
+	}
+
 }

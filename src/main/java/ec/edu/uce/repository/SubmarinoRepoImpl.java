@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -78,6 +82,23 @@ public class SubmarinoRepoImpl implements ISubmarinoRepo {
 		Query miQuery = this.entityManager.createNativeQuery("SELECT * FROM submarino s WHERE s.sub_modelo=:valor", Submarino.class);
 		miQuery.setParameter("valor", modelo);
 		return (Submarino) miQuery.getSingleResult();
+	}
+
+	@Override
+	public Submarino buscarSubmarinoPorModeloCiteriaAPI(String modelo) {
+		// TODO Auto-generated method stub
+		CriteriaBuilder miCriteriaBuilder = this.entityManager.getCriteriaBuilder();
+		CriteriaQuery<Submarino> miQuery = miCriteriaBuilder.createQuery(Submarino.class);
+		
+		Root<Submarino> miTabla = miQuery.from(Submarino.class);
+		
+		Predicate predicado= miCriteriaBuilder.equal(miTabla.get("modelo"), modelo);
+		
+		miQuery.select(miTabla).where(predicado);
+		
+		TypedQuery<Submarino> typedQuery = this.entityManager.createQuery(miQuery);
+		
+		return typedQuery.getSingleResult();
 	}
 
 }
